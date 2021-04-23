@@ -1,0 +1,71 @@
+
+<style type="text/css">
+  body {
+    padding-left: 11em;
+    font-family: Georgia, "Times New Roman",
+          Times, serif;
+    color: purple;
+    background-color: #d8da3d }
+  ul.navbar {
+    position: absolute;
+    top: 2em;
+    left: 1em;
+    width: 9em }
+  h1 {
+    font-family: Helvetica, Geneva, Arial,
+          SunSans-Regular, sans-serif } 
+  </style>
+<head>
+    <h1>========INDEX========</h1>
+</head>
+<body action="" method="post" class="form_contact" id="miForm">
+
+   <ng-container class="user_info">
+    
+    <a href="http://localhost:3000/">[Index]</a>
+    <a>----</a>
+    <a href="http://localhost:3000/crear">[Crear]</a>
+
+    <p></p>
+    <table class="table ">
+
+        <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Dni</th>
+                <th>Sector</th>
+                <th>Fecha Ingreso</th>
+                <th>Activo</th>
+                           
+            
+        </tr>
+        <tr {{#each emp}}>
+            
+            <td name="id" align="center">{{this.id}}</td>
+            <td name="nombre" align="center">{{this.nombre}}</td>
+            <td name="apellido" align="center">{{this.apellido}}</td>
+            <td name="dni" align="center">{{this.dni}}</td>
+            <td name="sector" align="center">{{this.sector}}</td> 
+            <td name="fechaIngreso" align="center">{{this.fechaIngreso}}</td> 
+            <td name="activo" align="center">{{this.activo}}</td> 
+            <td></td> 
+            <td><a href="http://localhost:3000/empleados/{{this.id}}">--[Ver]--</a></td>
+            <td><a href="http://localhost:3000/editar/{{this.id}}">--[Editar]--</a></td>
+            
+            <td>
+                <a  href="http://localhost:3000/eliminar/{{this.id}}" role="button">
+                --[Eliminar]-- &raquo;
+                </a>
+            </td>
+            
+        </tr {{/each}}>
+       
+    </table>
+   </ng-container>
+
+
+</body>
+
+
+
